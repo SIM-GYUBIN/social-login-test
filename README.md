@@ -1,11 +1,13 @@
 # social-login-test
-카카오 구글 소셜 로그인 동작 여부 확인해주는
+카카오 구글 소셜 로그인 동작 여부 확인해주는 데모 페이지
 
 
 - vue/@cli 이므로 `npm install` 후 `npm run serve`로 시작
 - components에서 각 소셜로그인 제공자 키 넣을 것
 
-적용된 예시 api 명세
+- 각 요구에 맞게 api 호출과 필드 조정할 것
+
+## 적용된 예시 api 명세
 
 ### 소셜 인증
 - **URL**: `/api/oauth/{provider}`
@@ -17,7 +19,7 @@
 
 ```json
 {
-    "code": "string"  // OAuth 인증 코드
+	"code": "string"  // OAuth 인증 코드
 }
 ```
 
@@ -25,22 +27,22 @@
 
 ```json
 {
-    "success": true,
-    "data": {
-	        "accessToken": "string",
-	        "refreshToken": "string"
-	        "user": {
-			        "id" : "string",
-			        "nickname": "string"
-			        "isNew": "boolean" // 로그인 시 신규 회원 여부			     
-	        }
+	"success": true,
+	"data": {
+		"accessToken": "string",
+		"refreshToken": "string"
+		"user": {
+			"id" : "string",
+			"nickname": "string"
+			"isNew": "boolean" // 로그인 시 신규 회원 여부			     
 		}
-		"error": null
+	}
+	"error": null
 }
 ```
 
 
-### 정보 조회회
+### 정보 조회
 - **URL**: `/api/user/me`
 - **Method**: `GET`
 - **Auth**: `Required`
@@ -51,12 +53,12 @@
 
 ```json
 {
-    "success": true,
-    "data": {
-			"id" : "string",
-			"nickname": "string",
-            "totalLikes": "integer"
-		},
+	"success": true,
+	"data": {
+		"id" : "string",
+		"nickname": "string",
+		"totalLikes": "integer"
+	},
 	"error": null
 }
 ```
